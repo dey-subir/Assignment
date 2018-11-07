@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1540840499 source:f:\data structure\asignment2\customer.cpp
+	"Customer.h"
+	"PhoneNumber.h"
+	<iostream>
+
+1540840500 f:\data structure\asignment2\customer.h
+	"Person.h"
+	<iostream>
+
+1540840500 f:\data structure\asignment2\person.h
+	<iostream>
+	<vector>
+	"PhoneNumber.h"
+
+1540840500 f:\data structure\asignment2\phonenumber.h
+	<iostream>
+
+1540840500 source:f:\data structure\asignment2\main.cpp
+	<iostream>
+	"Customer.h"
+
+1540840500 source:f:\data structure\asignment2\person.cpp
+	"Person.h"
+	"PhoneNumber.h"
+	<vector>
+
+1540840648 source:f:\data structure\asignment2\phonenumber.cpp
+	"PhoneNumber.h"
+

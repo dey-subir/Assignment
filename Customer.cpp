@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Customer::Customer(string phone,string nid,string operatorr): Person(nid){
+Customer::Customer(string personName,string fatherName,string motherName,string birthDate,string nid,string presentAddress,string permanentAddress,string phone,string operatorr): Person(personName,fatherName,motherName,birthDate,nid,presentAddress,permanentAddress){
     this->phone.push_back(PhoneNumber(phone,operatorr));
 }
 
@@ -14,62 +14,69 @@ void Customer::insertPhoneOp(string phone,string operatorr)
     if(phone.size()<15){
         this->phone.push_back(PhoneNumber(phone,operatorr));
 
+
     }
 }
 
 void Customer::getPhoneNumbers()
 {
-    int index= 1;
+    int temp= 1;
 
     for(PhoneNumber phone : this->phone){
-        cout << "Phone Number " << index << ": " << phone.getPhone() << endl;
-        index++;
+        cout << "Phone Number " << temp << ": " << phone.getPhone() << endl;
+        temp++;
     }
 }
 
 void Customer::getOperators()
 {
-    int index= 1;
+    int temp= 1;
 
     for(PhoneNumber phone : this->phone){
-        cout << "Phone Number " << index << ": " << phone.getPhone() << endl;
+        cout << "Phone Number " << temp << ": " << phone.getPhone() << endl;
     }
 }
 
 void Customer::printCustomerInfo()
 {
-int index=0;
-    while(index<phone.size()){
-        cout << "Operator:: " << phone[index].getOperator() << " " << "Number:: " << phone[index].getPhone() << endl;
-        index++;
+int i=0;
+    while(i<phone.size()){
+        cout << " Operator:: " << phone[i].getOperator() << "\n " << "Number:: " << phone[i].getPhone() <<"\n"<< endl;
+        i++;
     }
 
 }
 
 bool Customer::changeOperator(string phoneNumber,string newOp){
-int index=0;
-    while(index<phone.size()){
-        if(phone[index].getPhone()==phoneNumber)
-            phone[index].setOperator(newOp);
-            cout<<"Operator changed successfully"<<endl;
-        return true;
-        index++;
-    }
+ if(newOp=="Robi"||newOp=="GP"||newOp=="BanglaLink"||newOp=="Teletalk"||newOp=="KomKothaKoiben")
+    {int i=0;
+    while(i<phone.size()){
+        if(phone[i].getPhone()==phoneNumber)
+            phone[i].setOperator(newOp);
+            cout<<"Operator changed successfully\n\n"<<endl;
+            printCustomerInfo();
 
+        return true;
+        i++;
+    }
+    }
+else
+    cout<<"You entered a wrong Operator"<<endl;
     return false;
 }
 
 bool Customer::deletePhn(string phoneNumber){
 
-int index=0;
-    while(index<phone.size()){
-        if(phone[index].getPhone()==phoneNumber){
-            phone.erase(phone.begin()+index);
-cout<<"Deleted successfully"<<endl;
+int i=0;
+    while(i<phone.size()){
+        if(phone[i].getPhone()==phoneNumber){
+            phone.erase(phone.begin()+i);
+cout<<"\nDeleted successfully\n\n"<<endl;
+printCustomerInfo();
             return true;
         }
         else
-            cout<<"Sorry ,You have enterd a wrong number."<<endl;
-            index++;
+            //cout<<"Sorry ,You have entered a wrong number."<<endl;
+            i++;
     }
 }

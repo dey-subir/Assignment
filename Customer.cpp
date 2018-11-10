@@ -3,18 +3,14 @@
 #include <iostream>
 
 using namespace std;
-
-Customer::Customer(string personName,string fatherName,string motherName,string birthDate,string nid,string presentAddress,string permanentAddress,string phone,string operatorr): Person(personName,fatherName,motherName,birthDate,nid,presentAddress,permanentAddress){
-    this->phone.push_back(PhoneNumber(phone,operatorr));
+Customer::Customer(string personName,string fatherName,string motherName,string birthDate,string nid,string presentAddress,string permanentAddress): Person(personName,fatherName,motherName,birthDate,nid,presentAddress,permanentAddress){
+    //this->phone.push_back(PhoneNumber(phone,operatorr));
 }
-
 
 void Customer::insertPhoneOp(string phone,string operatorr)
 {
     if(phone.size()<15){
         this->phone.push_back(PhoneNumber(phone,operatorr));
-
-
     }
 }
 
@@ -49,7 +45,8 @@ int i=0;
 
 bool Customer::changeOperator(string phoneNumber,string newOp){
  if(newOp=="Robi"||newOp=="GP"||newOp=="BanglaLink"||newOp=="Teletalk"||newOp=="KomKothaKoiben")
-    {int i=0;
+    {
+        int i=0;
     while(i<phone.size()){
         if(phone[i].getPhone()==phoneNumber)
             phone[i].setOperator(newOp);

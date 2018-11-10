@@ -5,15 +5,15 @@ PhoneNumber::PhoneNumber()
 
 }
 
-PhoneNumber::PhoneNumber(string phone,string operatorr)
+PhoneNumber::PhoneNumber(string phone,string telephoneOperator)
 {
     this->phoneNumber= phone;
-    this->operatorr= operatorr;
+    this->telephoneOperator= telephoneOperator;
 }
 
 string PhoneNumber::getOperator()
 {
-    return this->operatorr;
+    return this->telephoneOperator;
 }
 
 string PhoneNumber::getPhone()
@@ -26,7 +26,9 @@ void PhoneNumber::setPhone(string phone)
     this->phoneNumber= phone;
 }
 
-void PhoneNumber::setOperator(string operatorr)
+void PhoneNumber::setOperator(string telephoneOperator)
 {
-    this->operatorr= operatorr;
+
+    this->telephoneOperator=telephoneOperator;
+
 }

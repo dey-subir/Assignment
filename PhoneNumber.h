@@ -9,12 +9,12 @@ class PhoneNumber
 {
 private:
     string phoneNumber;
-    string operatorr;
+    string telephoneOperator;
 public:
     PhoneNumber();
-    PhoneNumber(string phone,string operatorr);
+    PhoneNumber(string phone,string telephoneOperator);
     void setPhone(string phone);
-    void setOperator(string operatorr);
+    void setOperator(string telephoneOperator);
     string getOperator();
     string getPhone();
 };

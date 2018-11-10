@@ -5,15 +5,26 @@ using namespace std;
 
 int main()
 {
+        cout<<"Press 1 to use Vector\nPress 2 to use Array"<<endl;
+        int choice;
+        cin>>choice;
+        if(choice==1)
+{
+    Customer c1("Shuvra Dey","16216400421","Milan Kanti Dey","Shilpi Das","December 31,1997","Dhaka","Rangamati");
 
 
-    Customer c1("01833975394","17167289279","Robi");
+
+   // Customer c2("Subir Dey Raju","17116400421","Milan Kanti Dey","Shilpi Das","December 31,1997","Dhaka");
 
 
     c1.insertPhoneOp("01559972979","Teletalk");
     c1.insertPhoneOp("01777299456","GP");
+   // c2.insertPhoneOp("01678292939","KomKothaKoiben");
+
     c1.printInformations();
     c1.printCustomerInfo();
+    //c2.printInformations();
+    //c2.printCustomerInfo();
 
     while(true){
     cout<<"\n\npress 1 for inserting new number and operator , \n\n2 for deleting a phone number , \n\n3 for changing operator \n\n 4 for Exit."<<endl;
@@ -55,7 +66,17 @@ int main()
        }
 
     }
+}
 
+else if(choice==2)
+{
+
+Person p1("Shuvra Dey","16216400421","Milan Kanti Dey","Shilpi Das","December 31,1997","Dhaka");
+Person p2("16216400421","01552995680","Teletalk");
+p1.printInfo();
+}
+else
+    cout<<"Wrong input"<<endl;
 
     return 0;
 }
